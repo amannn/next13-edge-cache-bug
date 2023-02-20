@@ -1,9 +1,5 @@
 export default async function Page() {
-  return (
-    <div>
-      This is a static page. It should be cached in the edge. But it is not.
-    </div>
-  );
+  return <div>{new Date().toISOString()}</div>;
 }
 
 export const runtime = 'nodejs';
