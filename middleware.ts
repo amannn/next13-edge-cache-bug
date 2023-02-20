@@ -6,6 +6,10 @@ export function middleware() {
     'cache-control',
     's-maxage=1, stale-while-revalidate=604800'
   );
+  response.headers.set(
+    'x-cache-control',
+    's-maxage=1, stale-while-revalidate=604800'
+  );
   response.headers.set('x-middleware', new Date().toISOString());
   return response;
 }
