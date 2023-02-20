@@ -2,6 +2,9 @@ import {NextResponse} from 'next/server';
 
 export function middleware() {
   const response = NextResponse.next();
+
+  console.log([...response.headers.entries()]);
+
   response.headers.delete('cache-control');
   response.headers.set(
     'cache-control',
