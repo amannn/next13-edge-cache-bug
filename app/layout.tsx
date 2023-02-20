@@ -1,14 +1,6 @@
-import { Space_Grotesk } from '@next/font/google';
-
-const font = Space_Grotesk({
-  fallback: ['system-ui', 'sans-serif'],
-  display: 'auto',
-  subsets: ['latin'],
-});
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({children}) {
   return (
-    <html lang="en" className={font.className}>
+    <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -23,4 +15,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   );
 }
 
-export const dynamic = 'error';
+// export const dynamic = 'error';
