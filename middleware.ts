@@ -1,7 +1,7 @@
 import {NextResponse, NextRequest} from 'next/server';
 
 export function middleware(request: NextRequest) {
-  console.log(request.nextUrl.pathname);
+  request.headers.set('x-middleware', new Date().toISOString());
   return NextResponse.next();
 }
 
