@@ -7,4 +7,4 @@ export default async function Page() {
 }
 
 // export const dynamic = 'error';
-// export const runtime = 'experimental-edge';
+export const runtime = 'nodejs';
