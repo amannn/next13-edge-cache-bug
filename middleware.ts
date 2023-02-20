@@ -4,11 +4,11 @@ export function middleware(request: NextRequest) {
   const time = new Date().toISOString();
 
   const response = NextResponse.next({
-    request: {
-      headers: new Headers({
-        'x-middleware': time
-      })
-    }
+    // request: {
+    //   headers: new Headers({
+    //     'x-middleware': time
+    //   })
+    // }
   });
 
   response.headers.set('x-middleware', time);
