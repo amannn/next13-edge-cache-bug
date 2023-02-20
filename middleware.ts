@@ -1,8 +1,17 @@
-import {NextResponse} from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 
-export function middleware() {
-  const response = NextResponse.next();
-  response.headers.set('x-middleware', new Date().toISOString());
+export function middleware(request: NextRequest) {
+  const time = new Date().toISOString();
+
+  const response = NextResponse.next({
+    request: {
+      headers: new Headers({
+        'x-middleware': time
+      })
+    }
+  });
+
+  response.headers.set('x-middleware', time);
   return response;
 }
 

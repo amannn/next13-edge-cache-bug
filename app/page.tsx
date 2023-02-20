@@ -1,5 +1,5 @@
-export default async function Page() {
-  return <div>{new Date().toISOString()}</div>;
-}
+import {headers} from 'next/headers';
 
-export const runtime = 'nodejs';
+export default async function Page() {
+  return <div>{headers().get('x-middleware')}</div>;
+}
