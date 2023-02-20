@@ -1,8 +1,9 @@
-import {NextResponse, NextRequest} from 'next/server';
+import {NextResponse} from 'next/server';
 
-export function middleware(request: NextRequest) {
-  request.headers.set('x-middleware', new Date().toISOString());
-  return NextResponse.next();
+export function middleware() {
+  const response = NextResponse.next();
+  response.headers.set('x-middleware', new Date().toISOString());
+  return response;
 }
 
 export const config = {
